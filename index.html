@@ -1,99 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=<div class="card text-center">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <!-- Incluyendo Bootstrap 5 desde CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Estilo personalizado para el texto en el encabezado */
+        .card-header {
+            font-weight: bold;  /* Negrita */
+            font-size: 2rem;    /* Tamaño de letra más grande */
+        }
+    </style>
 </head>
-
 <body class="bg-light">
 
-
 <div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            Payment form example
+        </div>
 
-  <div class="card">
-    
-    <div class="card-header text-center">
-      Payment form example
+        <div class="card-body">
+            <!-- Mensaje de alerta alineado a la izquierda -->
+            <div class="alert alert-danger" role="alert">
+                Some fields are missing
+            </div>
+
+            <!-- Formulario -->
+            <form>
+
+                <!-- Campos de tarjeta, CVC y monto -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Card #</label>
+                        <input type="text" class="form-control" placeholder="XXXXXXXXXXXXXXXX" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">CVC #</label>
+                        <input type="text" class="form-control" placeholder="000" required>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Amount</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" placeholder="Amount" required step="0.01" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campos de nombre y apellidos -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">First name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Last name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Campos de ciudad, estado y código postal -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">State</label>
+                        <select class="form-select" required>
+                            <option value="" selected>Pick a state</option>
+                            <option>Florida</option>
+                            <option>Texas</option>
+                            <option>California</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Sección "We accept" con las tarjetas -->
+                <div class="row mb-3">
+                    <label class="form-label">We accept:</label>
+                    <div class="col-md-12">
+                        <img src="https://via.placeholder.com/50x30?text=Visa" alt="Visa">
+                        <img src="https://via.placeholder.com/50x30?text=Mastercard" alt="Mastercard">
+                        <img src="https://via.placeholder.com/50x30?text=Amex" alt="Amex">
+                        <img src="https://via.placeholder.com/50x30?text=PayPal" alt="PayPal">
+                    </div>
+                </div>
+
+                <!-- Campo para el mensaje alineado con los demás campos y con el mismo ancho -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Texto debajo del campo "Message" -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <small class="form-text text-muted">Add any notes here.</small>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="card-footer text-end">
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+
     </div>
-
-    <div class="card-body">
-
-      <div class="alert alert-danger text-center" role="alert">
-        Some fields are missing
-      </div>
-
-     
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Card #</label>
-          <input type="text" class="form-control">
-        </div>
-
-        <div class="col-md-3">
-          <label class="form-label">CVC #</label>
-          <input type="text" class="form-control">
-        </div>
-
-        <div class="col-md-3">
-          <label class="form-label">Amount</label>
-       
-          <div class="input-group">
-            <span class="input-group-text">$</span>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">First name</label>
-          <input type="text" class="form-control">
-        </div>
-
-        <div class="col-md-6">
-          <label class="form-label">Last name</label>
-          <input type="text" class="form-control">
-        </div>
-      </div>
-
-     
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label class="form-label">City</label>
-          <input type="text" class="form-control">
-        </div>
-
-        <div class="col-md-4">
-          <label class="form-label">State</label>
-          <select class="form-select">
-            <option selected>Pick a state</option>
-            <option>Florida</option>
-            <option>Texas</option>
-            <option>California</option>
-          </select>
-        </div>
-
-        <div class="col-md-2">
-          <label class="form-label">Postal Code</label>
-          <input type="text" class="form-control">
-        </div>
-      </div>
-
-    </div>
-
-    
-    <div class="card-footer text-end">
-      <button class="btn btn-secondary">Cancel</button>
-      <button class="btn btn-primary">Send</button>
-    </div>
-
-  </div>
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 </html>
